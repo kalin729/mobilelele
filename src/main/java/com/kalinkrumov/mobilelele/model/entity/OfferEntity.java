@@ -43,6 +43,9 @@ public class OfferEntity {
     @ManyToOne
     private UserEntity seller;
 
+    @Column(nullable = false)
+    private String description;
+
     public UUID getId() {
         return id;
     }
@@ -115,6 +118,15 @@ public class OfferEntity {
         return this;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public OfferEntity setDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
     @Override
     public String toString() {
         return "OfferEntity{" +
@@ -126,6 +138,7 @@ public class OfferEntity {
                 ", year=" + year +
                 ", model=" + model +
                 ", seller=" + seller +
+                ", description='" + description + '\'' +
                 '}';
     }
 }
